@@ -1,0 +1,222 @@
+:root{
+    --light-blue: #F3F5FC;
+    --primary-color: #355058;
+    box-sizing: border-box;
+}
+body{
+    background-color: var(--light-blue);
+    background-image: url(https://images.unsplash.com/photo-1622547748225-3fc4abd2cca0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1032&q=80);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.container{
+    font-family: Arial, Helvetica, sans-serif;
+    height: 100vh;
+    width: 95%;
+    margin:0 auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-content: center;
+}
+.menu{
+    margin: 1vw 2vw 1vw 0;
+}
+.encriptar{
+    height: 90%;
+    width: 60%;
+    margin-right: 0.5vw;
+}
+.encriptar, input{
+    background-color: transparent;
+    padding: 0.6vw;
+}
+/* editar el texto de entrada, Input */
+textarea{
+    resize: none;
+    width: 100%;
+    overflow: hidden;
+    background-color: transparent;
+}
+.entrada{
+    width: 100%;
+    min-height: 77vh;
+}
+.encriptar ::-webkit-input-placeholder, :focus, :enabled{
+    outline: 0;
+    -webkit-appearance: none;
+    appearance: none;
+    border: transparent;
+    color: var(--primary-color);
+    font-size: larger;
+    text-align: start;
+}
+.encriptar ::-moz-placeholder, :focus, :enabled{
+    outline: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+         appearance: none;
+    border: transparent;
+    color: var(--primary-color);
+    font-size: larger;
+    text-align: start;
+}
+.encriptar :-ms-input-placeholder, :focus, :enabled{
+    outline: 0;
+    -webkit-appearance: none;
+    appearance: none;
+    border: transparent;
+    color: var(--primary-color);
+    font-size: larger;
+    text-align: start;
+}
+.encriptar ::placeholder, :focus, :enabled{
+    outline: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+         appearance: none;
+    border: transparent;
+    color: var(--primary-color);
+    font-size: larger;
+    text-align: start;
+}
+input, ::-webkit-input-placeholder{
+    height: 50vh;
+    width: 90%;
+}
+input, ::-moz-placeholder{
+    height: 50vh;
+    width: 90%;
+}
+input, :-ms-input-placeholder{
+    height: 50vh;
+    width: 90%;
+}
+input, ::placeholder{
+    height: 50vh;
+    width: 85%;
+}
+/**********+ icono ***********/
+.buttons img{
+    margin-right: 0.5vw;
+}
+.buttons p{
+    color: var(--primary-color);
+}
+/***************botones******************/
+.paraEncriptar{
+    border: none;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 1% 8%;
+    cursor: pointer;
+    margin-right:0.5vw;
+    border-radius: 5px;
+    width: 45%;
+    text-align: center;
+}
+.botonSimple{
+    border: solid 1px var(--primary-color);
+    color: var(--primary-color);
+    padding: 1% 8%;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
+    width: 45%;
+    background-color: transparent;
+}
+.columna{
+    width: 100%;
+}
+/*********************** mostrar *********/
+.mostrar{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+    text-align: center;
+    height: 90%;
+    border-radius: 10px;
+    padding: 1rem;
+    width: 40%;
+    border: solid 1px var(--primary-color);
+    color: var(--primary-color);
+}
+.mostrar img{
+    max-width: 80%;
+}
+
+#ocultar{
+    margin-bottom: 1vw;
+}
+#volver{
+    display: none;
+}
+/* responsive design */
+@media screen and (max-width: 750px){
+    .container{
+        display: inline-block;
+        height: 100vh;
+        width: 100vw;
+    }
+    section, #seccionEntrada{
+        width: 90%;
+        height: 95%;
+        margin: 0 auto;
+        padding-top: 2vh;
+    }
+    .paraEncriptar{
+        width: 100%;
+        margin-bottom: 1vw;
+    }
+    .botonSimple{
+        width: 100%;
+        margin-bottom: 1vw;
+    }
+
+    /*mostrar*/
+    #seccionMostrar{
+        display: none;
+        width: 95%;
+        margin: 3vw 0 0 0;
+        height: 90%;
+    }
+    #volver{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+    .mostrar img{
+        margin-bottom: 2vw;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .columna{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+    .paraEncriptar{
+        margin-bottom: 2vw;
+    }
+    .botonSimple{
+        margin-bottom: 2vw;
+    }
+}
