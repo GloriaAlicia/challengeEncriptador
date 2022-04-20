@@ -2,6 +2,8 @@
     --light-blue: #F3F5FC;
     --primary-color: #355058;
     box-sizing: border-box;
+    --alturacontendor: 84vh;
+    font-family: Arial, Helvetica, sans-serif;
 }
 body{
     background-color: var(--light-blue);
@@ -9,12 +11,35 @@ body{
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    height: 100vh;
+}
+.menu{
+    width: 100%;
+    height: 7vh;
+    align-content: center;
+    flex-direction: row;
+}
+.menu img{
+    width: 1.3rem;
+}
+.menu ul, p{
+    height: 7vh;
+    display: flex;;
+    align-items: center;
+    justify-content: center;
+    font-family: Helvetica;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+.menu ul a{
+    margin-right: 2vw;
+    color: var(--primary-color);
 }
 .container{
     font-family: Arial, Helvetica, sans-serif;
-    height: 100vh;
-    width: 95%;
-    margin:0 auto;
+    height: var(--alturacontendor);
+    padding: 0 2vw;
+    margin: 0 auto;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -25,12 +50,9 @@ body{
         -ms-flex-align: center;
         align-content: center;
 }
-.menu{
-    margin: 1vw 2vw 1vw 0;
-}
 .encriptar{
-    height: 90%;
-    width: 60%;
+    height: 95%;
+    width: 55%;
     margin-right: 0.5vw;
 }
 .encriptar, input{
@@ -46,7 +68,7 @@ textarea{
 }
 .entrada{
     width: 100%;
-    min-height: 77vh;
+    min-height: 70vh;
 }
 .encriptar ::-webkit-input-placeholder, :focus, :enabled{
     outline: 0;
@@ -120,6 +142,10 @@ input, ::placeholder{
     border-radius: 5px;
     width: 45%;
     text-align: center;
+    transition: 0.5s;
+}
+.paraEncriptar:hover{
+    transform: scale(0.96);
 }
 .botonSimple{
     border: solid 1px var(--primary-color);
@@ -130,9 +156,18 @@ input, ::placeholder{
     text-align: center;
     width: 45%;
     background-color: transparent;
+    margin-right:0.5vw;
+}
+.botonSimple:hover{
+    transform: scale(0.96);
 }
 .columna{
     width: 100%;
+}
+.centrado{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
 }
 /*********************** mostrar *********/
 .mostrar{
@@ -150,12 +185,15 @@ input, ::placeholder{
         -ms-flex-direction: column;
         flex-direction: column;
     text-align: center;
-    height: 90%;
+    min-height: 70vh;
     border-radius: 10px;
     padding: 1rem;
-    width: 40%;
+    width: 35%;
     border: solid 1px var(--primary-color);
     color: var(--primary-color);
+}
+#mostrar{
+    text-align: center;
 }
 .mostrar img{
     max-width: 80%;
@@ -167,18 +205,30 @@ input, ::placeholder{
 #volver{
     display: none;
 }
+/* modo oscuro */
+
 /* responsive design */
 @media screen and (max-width: 750px){
+    body{
+        width: 100vw;
+    }
     .container{
         display: inline-block;
-        height: 100vh;
-        width: 100vw;
+        height: var(--alturacontendor);
+        width: 100%;
+        padding: 0;
     }
     section, #seccionEntrada{
         width: 90%;
         height: 95%;
-        margin: 0 auto;
         padding-top: 2vh;
+    }
+    .encriptar{
+        padding: 0 3vw;
+        margin: 0;
+    }
+    .entrada{
+        min-height: 80%;
     }
     .paraEncriptar{
         width: 100%;
@@ -192,9 +242,12 @@ input, ::placeholder{
     /*mostrar*/
     #seccionMostrar{
         display: none;
-        width: 95%;
-        margin: 3vw 0 0 0;
+        width: 88%;
+        margin: 3vw auto 0 auto;
         height: 90%;
+    }
+    .mostrar img{
+        max-width: 60%;
     }
     #volver{
         display: flex;
@@ -204,6 +257,9 @@ input, ::placeholder{
     }
     .mostrar img{
         margin-bottom: 2vw;
+    }
+    .menu{
+        display: block;
     }
 }
 

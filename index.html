@@ -5,11 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="icon" type="icon" href="a.ico"/>
 
     <link rel="stylesheet" href="styles/style.css">
-    <title>encriptador</title>
+    <title>encriptador de Gloria</title>
 </head>
 <body>
+    <nav class="menu">
+        <ul>
+            <a href="index.html"><li><img src="./assets/a.svg" alt="logo"></li></a>
+            <a href="./subpages/learn.html"><li>Acerca De</li></a>
+            <a href="https://github.com/Trayheadlight/challengeEncriptador"><li>Github</li></a>
+        </ul>
+    </nav>
     <main class="container">
         <section class="encriptar" id="seccionEntrada" >
             <textarea name="entrada" id="entrada" class="entrada" placeholder="Ingrese el texto aquí" required></textarea>
@@ -30,12 +38,16 @@
             <img src="./assets/Questions-bro.svg" alt="imagen ilustrativa de Alura" id="imagenSinMensaje">
             <h2 id="titulo">Ningun mensaje fue encontrado</h2>
             <textarea id="mostrar" >Ingresa el texto que desees encriptar o desencriptar</textarea>
-            <div class="columna">
+            <div class="columna" class="centrado">
                 <button class="botonSimple" id="bcopiar" >Copiar</button>
                 <button class="botonSimple" id="volver" >Volver</button>
             </div>
         </section>
     </main>
-    <script src="app.js"></script>
+    <section class="menu">
+        <p>Hecho por Gloria Alicia G.G.</p>
+    </section>
+    <script src="./scripts/modoOscuro.js"></script>
+    <script src="./scripts/app.js"></script>
 </body>
 </html>

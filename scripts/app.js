@@ -81,25 +81,46 @@ function ocultar(){
 }
 
 /*responsive en javascript*/
-var breakpoint = document.documentElement.clientWidth;
-if (breakpoint <= 750) {
-    function muestraEncriptacion() {
-        document.getElementById("seccionEntrada").style.display = "none";
-        document.getElementById("seccionMostrar").style.display = "flex";
+    var breakpoint = document.documentElement.clientWidth;
+    if (breakpoint <= 750){
+    muestraResultado();
     }
+    
+    let mediaQuerypequeña = window.matchMedia("screen and (max-width:750px)");
+    let mediaQuerygrande = window.matchMedia("screen and (min-width: 751px)");
+    let orientacion = window.matchMedia("(orientation: portrait)");
 
-    /* para volver */
+    mediaQuerypequeña.onchange = (reescala) => {
+        vuelve()
+        if (reescala.matches) {
+            muestraResultado();
+        }
+    }
+    orientacion.onchange = (reescala) => {
+        vuelve();
+    }
+    function muestraResultado() {
+        botonEncriptar.addEventListener("click", encriptador);
+            botonEncriptar.addEventListener("click", muestraEncriptacion);
+            botonDes.addEventListener("click", muestraEncriptacion);
+
+            function muestraEncriptacion() {
+            document.getElementById("seccionEntrada").style.display = "none";
+            document.getElementById("seccionMostrar").style.display = "flex";
+            }
+    }
     let botonVolver = document.getElementById("volver")
-    botonVolver.addEventListener("click", vuelve);
-    function vuelve() {
-        document.getElementById("seccionMostrar").style.display = "none";
-        document.getElementById("seccionEntrada").style.display = "flex";
-        document.getElementById("seccionEntrada").style.flexDirection = "column";
+        botonVolver.addEventListener("click", vuelve);
+        function vuelve() {
+            document.getElementById("seccionMostrar").style.display = "none";
+            document.getElementById("seccionEntrada").style.display = "flex";
+            document.getElementById("seccionEntrada").style.flexDirection = "column";
+        }
+    mediaQuerygrande.onchange = (reescala) => {
+        vuelve();
+        if (reescala.matches){
+            document.getElementById("seccionMostrar").style.display = "flex";
+            document.getElementById("seccionEntrada").style.display = "flex";
+            document.getElementById("seccionEntrada").style.flexDirection = "column";
+        }
     }
-
-    botonEncriptar.addEventListener("click", encriptador);
-    botonEncriptar.addEventListener("click", muestraEncriptacion);
-
-    botonDes.addEventListener("click", desencriptar);
-    botonDes.addEventListener("click", muestraEncriptacion);
-}
