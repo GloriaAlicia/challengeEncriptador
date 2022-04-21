@@ -1,0 +1,65 @@
+:root{
+    --light-blue: #F3F5FC;
+    --primary-color: #355058;
+    font-family: Arial, Helvetica, sans-serif;
+}
+body{
+    background-color: var(--light-blue);
+    background-image: url(https://images.unsplash.com/photo-1622547748225-3fc4abd2cca0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1032&q=80);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 90vw;
+    height: 90vh;
+    margin:auto;
+}
+
+.menu{
+    width: 100%;
+    height: 7vh;
+    align-content: center;
+    flex-direction: row;
+}
+.menu img{
+    width: 1.3rem;
+}
+.menu ul, p{
+    height: 7vh;
+    display: flex;;
+    align-items: center;
+    justify-content: center;
+    font-family: Helvetica;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+.menu ul a{
+    margin-right: 2vw;
+    color: var(--primary-color);
+}
+h1{
+    text-align: center;
+    color: var(--primary-color);
+}
+.info{
+    color: var(--primary-color);
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+.article{
+    border: solid 1px var(--primary-color);
+    border-radius: 10px;
+    padding: 2vw;
+    margin: 1vw;
+}
+.article, a{
+    color: var(--primary-color);
+}
+a:hover{
+    font-weight: bold;
+}

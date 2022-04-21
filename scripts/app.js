@@ -1,7 +1,6 @@
     var botonEncriptar = document.getElementById("botonEncriptar");
     botonEncriptar.addEventListener("click", encriptador);
     let icono = document.getElementById("iconCorrecto").style.display = "none";
-    var textoVacio = " "
 
     var mostrar = document.getElementById("mostrar");
     var titulo = document.getElementById("titulo");
@@ -10,13 +9,12 @@ function limpiarEntrada() {
     let entrada = document.getElementById("entrada").value.toLowerCase();
     let entradaLimpia = "string";
     
-    entradaLimpia.innerHTML = entrada.split("á").join("a").split("é").join("e").split("í").join("i").split("ó").join("o").split("ú").join("u").split("!").join("").split("?").join("").split("#").join("").split("$").join("").split("%").join("").split("&").join("").split("/").join("").split("(").join("").split(")").join("").split("=").join("").split("¿").join("").split("¡").join("").split("+").join("").split("ö").join("");
+    entradaLimpia.innerHTML = entrada.split("á").join("a").split("é").join("e").split("í").join("i").split("ó").join("o").split("ú").join("u").split("!").join("").split("?").join("").split("#").join("").split("$").join("").split("%").join("").split("&").join("").split("/").join("").split("(").join("").split(")").join("").split("=").join("").split("¿").join("").split("¡").join("").split("+").join("").split("ö").join("").split(">").join("").split("<").join("");
     return entrada;
 }
 
 function encriptador() {
     let entradaLimpiada = limpiarEntrada();
-
     let diccionario = {
         a: "ai",
         e: "enter",
@@ -25,7 +23,6 @@ function encriptador() {
         u: "ufat"
     };
 
-  //  mostrar.innerHTML = "";
     mostrar.innerHTML = entradaLimpiada.replace(/a|e|i|o|u/g, function(reemplazar) {
         return diccionario[reemplazar];
     } )
@@ -59,7 +56,7 @@ function copiar() {
     let textoCopiado = document.getElementById("mostrar").value;
     navigator.clipboard.writeText(textoCopiado);
 
-    document.getElementById("entrada").value = textoVacio;
+    document.getElementById("entrada").value = " ";
     
     ocultar()
 }
@@ -79,6 +76,16 @@ function ocultar(){
     mostrar.style.height= "5vh";
     imgSinMensaje = document.getElementById("imagenSinMensaje").style.display = "block";
 }
+
+
+var entrada = document.getElementById("entrada");
+entrada.addEventListener('input', vacio);
+
+function vacio() {
+    document.querySelector(".aviso").classList.add("oculto");
+}
+
+
 
 /*responsive en javascript*/
     var breakpoint = document.documentElement.clientWidth;

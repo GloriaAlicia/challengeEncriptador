@@ -205,8 +205,23 @@ input, ::placeholder{
 #volver{
     display: none;
 }
-/* modo oscuro */
-
+/* aviso */
+@keyframes desvanecer{
+    0%   {opacity: 100%;}
+    70% {opacity: 70%;}
+    99% {opacity: 0%; top:20%;}
+    100%{visibility: hidden;}
+}
+.aviso{
+    width: 60%;
+    display: inline-block;
+    position: absolute;
+    top: 5%;
+    font-size: larger;
+    animation-name: desvanecer;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+}
 /* responsive design */
 @media screen and (max-width: 750px){
     body{
@@ -275,4 +290,8 @@ input, ::placeholder{
     .botonSimple{
         margin-bottom: 2vw;
     }
+}
+
+.oculto{
+    display: none;
 }
