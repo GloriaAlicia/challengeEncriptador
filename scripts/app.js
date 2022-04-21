@@ -7,9 +7,11 @@
 /* evitar mayusculas, acentos o caracteres especiales*/
 function limpiarEntrada() {
     let entrada = document.getElementById("entrada").value.toLowerCase();
-    let entradaLimpia = "string";
-    
-    entradaLimpia.innerHTML = entrada.split("á").join("a").split("é").join("e").split("í").join("i").split("ó").join("o").split("ú").join("u").split("!").join("").split("?").join("").split("#").join("").split("$").join("").split("%").join("").split("&").join("").split("/").join("").split("(").join("").split(")").join("").split("=").join("").split("¿").join("").split("¡").join("").split("+").join("").split("ö").join("").split(">").join("").split("<").join("");
+
+    var caracEspeciales = "áóéí!@#$^&%*()+=-[]\/{}|:<>?,.";
+    for (var i = 0; i < caracEspeciales.length; i++) { 
+         entrada = entrada.replace(new RegExp("\\" + caracEspeciales[i], 'gi'), '');
+    }
     return entrada;
 }
 
